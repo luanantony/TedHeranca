@@ -1,57 +1,56 @@
+import java.util.Scanner;
+
 public class Pessoa {
+    String nome;
+    String dataNascimento;
+    String endereco;
+    String contato;
+    String cargo;
+    int matricula;
+    double salario;
+    String dataAdmissao;
+    String codigo;
+    String profissao;
 
 
-    private String nome;
-    private String dataNascimento;
-    private String endereco;
-    private String contato;
-    private String cargo;
+//metodos
 
-    public Pessoa(String nome, String dataNascimento, String endereco, String contato, String cargo) {
+    void mudarCargo(String cargo) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\nDigite o novo cargo: ");
+        String novoCargo = scan.nextLine();
+        this.cargo = novoCargo;
+    }
+    void reajustarSalario() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\nDigite o novo salário: ");
+        double novoSalario = scan.nextDouble();
+        this.salario = novoSalario;
+    }
+
+
+//construtor Funcionario
+
+    public Pessoa(int matricula, String nome, String dataNascimento, String endereco, String contato, String cargo, double salario, String dataAdmissao) {
+        this.matricula = matricula;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.endereco = endereco;
         this.contato = contato;
         this.cargo = cargo;
+        this.salario = salario;
+        this.dataAdmissao = dataAdmissao;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
+    //construtor Cliente
+    public Pessoa(String codigo, String nome, String dataNascimento, String endereco, String contato, String cargo, String profissao) {
+        this.codigo = codigo;
         this.nome = nome;
-    }
-
-    public String getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
         this.endereco = endereco;
-    }
-
-    public String getContato() {
-        return contato;
-    }
-
-    public void setContato(String contato) {
         this.contato = contato;
-    }
-
-    public String getCargo() {
-        return cargo;
-    }
-
-    public void setCargo(String cargo) {
         this.cargo = cargo;
+        this.profissao = profissao;
+
     }
 }
